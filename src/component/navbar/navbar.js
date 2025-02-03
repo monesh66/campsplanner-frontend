@@ -20,7 +20,7 @@ const Navbar = ({ url, handlePageChange, page }) => {
     // },[page])
 
 
-    return (
+    return ( 
         <div className="navbar">
             <div className="topSection">
                 <img src={bitLogo} alt="BIT LOGO" />

@@ -29,7 +29,7 @@ const Login = ({ url }) => {
                 loginType: "oAuth"
             });
             console.log(response)
-            if (response.data.code == 1) {
+            if (response.data.code === 1) {
                 console.log("oAuth Login successful!");
                 Cookies.set('jwtToken', response.data.jwt);
                 navigate("/dashboard");
@@ -39,7 +39,7 @@ const Login = ({ url }) => {
                 setShowMSG(1);
             }
         } catch (error) {
-            
+        
         }
     };
 
@@ -64,7 +64,7 @@ const Login = ({ url }) => {
                         JWT: cookie,
                         loginType: "username"
                     });
-                    if (response.data.auth == true) {
+                    if (response.data.auth === true) {
                         console.log(response.data)
                         navigate("/dashboard");
                     }
@@ -86,7 +86,7 @@ const Login = ({ url }) => {
         setTimeout(() => {
             checkAuth();
         }, 1000);
-    }, [])
+    }, )
 
     //handle submit
     const handleSubmit = async (username, password) => {
@@ -104,7 +104,7 @@ const Login = ({ url }) => {
                 loginType: "username"
             });
 
-            if (response.data.code == 1) {
+            if (response.data.code === 1) {
                 console.log("Login successful!");
                 Cookies.set('jwtToken', response.data.jwt);
                 navigate("/dashboard");
@@ -124,14 +124,14 @@ const Login = ({ url }) => {
     return (
         <div>
             {(() => {
-                if (isAuth == 0) {
+                if (isAuth === 0) {
                     return (
                         <div className="loading">
                             <PiSpinnerBold className='pi' />
                             <p>Authenticating...</p>
                         </div>)
                 }
-                else if (isLoading == 1 & isAuth != 0) {
+                else if (isLoading === 1 & isAuth !== 0) {
                     return (
                         <div className="loading">
                             <PiSpinnerBold className='pi' />

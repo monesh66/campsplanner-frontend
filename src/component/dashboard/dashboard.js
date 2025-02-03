@@ -7,7 +7,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { BsPersonFillCheck } from "react-icons/bs";
 import { BsPersonFillX } from "react-icons/bs";
-import { PiDatabase, PiStudent } from "react-icons/pi";
+import { PiStudent } from "react-icons/pi";
 import { BsBuildingExclamation } from "react-icons/bs";
 import { BsBuildingCheck } from "react-icons/bs";
 
@@ -38,11 +38,11 @@ const Dashboard = ({ url }) => {
             console.log(`compLoad: "${compLoad}"`)
             compLoad.split(" ").forEach((ele) => {
                 console.log(`ele: ${ele}`)
-                if (ele == "dashboard") {
+                if (ele === "dashboard") {
                     flag = 1
                 }
             })
-            if (flag == 1) {
+            if (flag === 1) {
                 setcompMount(1);
                 console.log(`set compMount: ${compMount}`)
             }
@@ -55,7 +55,7 @@ const Dashboard = ({ url }) => {
             Cookies.set("compLoad", compLoad + " dashboard")
         }
 
-    }, [])
+    }, [compMount])
 
 
     const sk = <Skeleton
@@ -97,13 +97,13 @@ const Dashboard = ({ url }) => {
         width={1800}
         height={750} />;
 
-    const sk5 = <Skeleton
-        className='skl5'
-        baseColor="#d6d6d6a9"
-        highlightColor="#f6f6f6"
-        width={80}
-        height={20}
-        animation="wave" />;
+    // const sk5 = <Skeleton
+    //     className='skl5'
+    //     baseColor="#d6d6d6a9"
+    //     highlightColor="#f6f6f6"
+    //     width={80}
+    //     height={20}
+    //     animation="wave" />;
 
     const sk6 = <Skeleton
         className='skl5'
@@ -118,7 +118,7 @@ const Dashboard = ({ url }) => {
     //load sk
     useEffect(() => {
         console.log(`sk Load comp state: ${compMount}`)
-        if (compMount == 1) {
+        if (compMount === 1) {
             setskLoad(1)
         }
         else {
@@ -130,7 +130,7 @@ const Dashboard = ({ url }) => {
 
     //table sk load
     useEffect(() => {
-        if (compMount == 0) {
+        if (compMount === 0) {
             setTimeout(() => {
                 setTbLoad(1)
             }, 3000);
@@ -279,7 +279,7 @@ const Dashboard = ({ url }) => {
             })
 
         }
-        if (compMount == 0) {
+        if (compMount === 0) {
             setIsLoaded(1);
             setTimeout(() => {
                 apicall();

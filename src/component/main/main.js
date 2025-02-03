@@ -4,9 +4,9 @@ import Cookies from 'js-cookie';
 import NavBar from '../navbar/navbar';
 import Dashboard from '../dashboard/dashboard';
 import ViewPlanMain from '../viewPlan/viewPlanMain'
-import { jwtDecode } from 'jwt-decode';
+// import { jwtDecode } from 'jwt-decode';
 import { useEffect, useState } from 'react';
-import { PiSpinnerBold, PiUsersFourLight } from "react-icons/pi";
+import { PiSpinnerBold} from "react-icons/pi";
 import { useNavigate, useLocation, Route, Routes } from "react-router-dom";
 
 const Main = ({ url }) => {
@@ -35,7 +35,7 @@ const Main = ({ url }) => {
                             JWT: jwtToken
                         }
                     )
-                    if (response.data.auth == true) {
+                    if (response.data.auth === true) {
                         setUserType(response.data.userType)
                         Cookies.set("compLoad","m ")
                         setIsAuth(1);
@@ -54,25 +54,25 @@ const Main = ({ url }) => {
             checkAuth();
             setPage(location.pathname.split('/')[1]);
         }, 1200)
-    }, [])
+    }, )
 
 
     //loading
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(0);
-        }, 2000)
+        }, 2000) 
     }, []);
     return (
         <div className="main">
             {(() => {
-                if (isAuth == 0) {
+                if (isAuth === 0) {
                     return (
                         <div className="loading">
                             <PiSpinnerBold className='pi' />
                             <p>Authenticating...</p>
                         </div>)
-                } else if (isLoading == 1) {
+                } else if (isLoading === 1) {
                     return (
                         <div className="loading">
                             <PiSpinnerBold className='pi' />
@@ -80,7 +80,7 @@ const Main = ({ url }) => {
                         </div>)
                 }
                 else {
-                    if (userType == "staff") {
+                    if (userType === "staff") {
                         return (
                             <div>
                                 <NavBar handlePageChange={handlePageChange}

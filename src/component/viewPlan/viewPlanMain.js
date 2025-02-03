@@ -13,7 +13,7 @@ const ViewPlanMain = ()=>{
                 <h1>View Plans</h1>
             </div>
             <div className="body">
-                <div className="sec1">
+                <div className="sec1"> 
 
                 </div>
             </div>
