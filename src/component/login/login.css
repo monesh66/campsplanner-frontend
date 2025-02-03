@@ -1,0 +1,165 @@
+body{
+    /* background-color: rgb(57, 189, 189); */
+    background-color: black;
+}
+.login{
+    width:1200px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.203);
+    display: flex;
+    color: black;   
+}
+.login > div{
+    width: 600px;
+    height: 700px;
+}
+.login .left{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* background-color: rgb(0, 128, 255); */
+    background-color: rgb(41, 41, 41);
+}
+.login .right{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.login .right .box{
+    width: 550px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login .right .box > p{
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 40px;
+}
+.login .inputBox{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    border: solid 1px rgb(154, 204, 255);
+    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.203);
+    /* background: rgb(190, 222, 255); */
+    background-color: rgb(36, 36, 36);
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login .inputBox input{
+    width: 80%;
+    height: 40px;
+    border-radius: 2px;
+    border-bottom: solid rgb(232, 232, 232) 3px;
+    margin-top: 30px;
+    font-size: 25px;
+    background-color: transparent;
+    color: white;
+}
+input:focus {
+    outline: none; 
+    box-shadow: none;
+}
+input::placeholder {
+    color: rgb(199, 199, 199);
+}
+.login .inputBox input:hover{
+    border-bottom: 3px solid green;
+}
+
+.login .inputBox button{
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 40px;
+    font-size: 27px;
+    background-color: rgb(255, 255, 255);
+}
+.login .inputBox button:hover{
+    width: 210px;
+    height: 55px;
+    background-color: rgb(5, 5, 5);
+    color: white;
+    transition: 200ms;
+}
+.login .Gauth{
+    margin-top: 80px;
+}
+.login .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login .left .loginimg{
+    height: 600px;
+}
+.login .google *{
+    background: rgb(40, 40, 40);
+    color: white;
+    border-radius: 100px;
+
+}
+.login .google{
+    width: 300px;
+    border-radius: 100px;
+}
+.login .google span{
+    font-size: 20px;
+}
+.login .google svg{
+    height: 25px;
+}
+.login .googletext{
+    color: black;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.notification{
+    position: absolute;
+    top: 20px;
+    left: calc(50vw - 400px);
+    width: 800px;
+    height: 70px;
+    border-right: solid 5px rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(197, 87, 87);
+    animation: shake 0.5s ease-in-out;
+}
+@keyframes shake{
+    0% {left: calc(50vw - 400px);}
+    10%, 30%, 50%, 70%, 90% { left: calc(50vw - 400px - 20px);}
+    20%, 40%, 60%, 80% { left: calc(50vw - 400px + 20px);}
+    100% {left: calc(50vw - 400px); }
+}
+.notification .msg{
+    font-size: 25px;
+    color: rgb(15, 0, 0);
+    width: 730px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.notification .close{
+    position: relative;
+    right: 0;
+    font-size: 30px;
+}
