@@ -7,7 +7,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(64, 64, 64);
     transition: 200ms;
     overflow: hidden;
     top: 10;
@@ -29,7 +29,7 @@ body{
     width: 20vw;
 }
 .navbar ul li{
-    margin-left: 10px;
+    /* margin-left: 10px; */
     width: 20vw;
     height: 60px;
     display: flex;
@@ -44,7 +44,7 @@ body{
     color: rgb(255, 59, 59);
     border: solid 1px rgb(255, 129, 129);
     /* background-color: rgb(255, 180, 180); */
-    margin-top: 480px;  
+    margin-top: 300px;  
 }
 .navbar ul li span{
     width: 5vw;
@@ -52,21 +52,23 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
 }
 .navbar ul .dim{
     background-color: rgb(255, 255, 255);
     color: black;
+    background-color: rgb(241, 241, 241);
+
 }
 .navbar ul .dim:hover{
     background-color: rgb(255, 255, 255);
     color: black;
 }
-.navbar ul li a{
+.navbar ul li .a{
     width: 15vw;
     height: 60px;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }

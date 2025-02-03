@@ -3,7 +3,7 @@
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(241, 241, 241);
     margin-left: 5vw;
     color: black;
 }
@@ -29,6 +29,7 @@
 }
 .dashboard .title h1{
     margin-left: 20px;
+    font-size: 25px;
 }
 .dashboard .body{
     margin-left: 10px;
@@ -50,14 +51,14 @@
     /* border: solid 1px blue; */
 }
 .dashboard .sec1 .ctnr1 .box{
-    height: 200px;
-    width: 380px;
-    border-right: solid 7px black;
+    height: 150px;
+    width: 300px;
+    /* border-right: solid 2px black; */
     background: white;
     border-radius: 10px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.250);
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.250);
 
 }
 /* .dashboard .sec1 .ctnr1 .b1{
@@ -101,30 +102,56 @@ background: linear-gradient(124deg, rgba(83,0,141,1) 23%, rgba(197,83,249,1) 87%
     display: flex;
 }
 .dashboard .sec1 .ctnr1 .box .icon{
-    width: calc(380px /3);
-    font-size: 100px;
+    width: calc(300px /3);
+    font-size: 60px;
+    color: rgb(0, 0, 0);
     display: flex;
     margin-top: 30px;
     justify-content: center;
 }
+.dashboard .sec1 .ctnr1 .b1 .icon{
+    color: blue;
+}
+.dashboard .sec1 .ctnr1 .b2 .icon{
+    color: green;
+}
+.dashboard .sec1 .ctnr1 .b3 .icon{
+    color: rgb(0, 123, 255);
+}
+.dashboard .sec1 .ctnr1 .b4 .icon{
+    color: rgb(255, 170, 0);
+}
+.dashboard .sec1 .ctnr1 .b5 .icon{
+    color: rgb(67, 183, 0);
+}
+.dashboard .sec1 .ctnr1 .b6 .icon{
+    color: rgb(255, 0, 0);
+}
+.dashboard .sec1 .ctnr1 .b7 .icon{
+    color: rgb(80, 171, 0);
+}
+.dashboard .sec1 .ctnr1 .b8 .icon{
+    color: rgb(255, 39, 39);
+}
 .dashboard .sec1 .ctnr1 .box .text{
-    width: calc(380px - (380px /3));
+    width: calc(300px - (300px /3));
 }
 .dashboard .sec1 .ctnr1 .box .text .nums{
-    height: 160px;
+    height: 110px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 600;
 }
 .dashboard .sec1 .ctnr1 .box .text .para{
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 400;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgb(72, 72, 72);
 }
 .dashboard .sec2{
     height: 800px;

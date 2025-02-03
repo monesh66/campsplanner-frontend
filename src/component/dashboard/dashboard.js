@@ -346,7 +346,7 @@ const Dashboard = ({ url }) => {
                     <div className="ctnr1">
                         {skLoad ? (
                             <div>
-                                <div className="box b1">
+                                <div className="box b5">
                                     <div className="icon">{isLoaded ? (<BsPersonFillCheck />) : (sk2)}</div>
                                     <div className="text">
                                         <div className="nums">{isLoaded ? (parseInt(acitveStaff)) : (sk)}</div>
@@ -355,7 +355,7 @@ const Dashboard = ({ url }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="box b2">
+                                <div className="box b6">
                                     <div className="icon">{isLoaded ? (<BsPersonFillX />) : (sk2)}
                                     </div>
                                     <div className="text">
@@ -365,7 +365,7 @@ const Dashboard = ({ url }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="box b3">
+                                <div className="box b7">
                                     <div className="icon">{isLoaded ? (<PiStudent />) : (sk2)}</div>
                                     <div className="text">
                                         <div className="nums">{isLoaded ? (parseInt(activeStudents)) : (sk)}</div>
@@ -374,7 +374,7 @@ const Dashboard = ({ url }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="box b4">
+                                <div className="box b8">
                                     <div className="icon">{isLoaded ? (<PiStudent />) : (sk2)}</div>
                                     <div className="text">
                                         <div className="nums">{isLoaded ? (parseInt(inactiveStudents)) : (sk)}</div>

@@ -32,43 +32,43 @@ const Navbar = ({ url, handlePageChange, page }) => {
                         if (page === "dashboard") {
                             return (
                                 <div>
-                                    <li className='dim' onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><a href='/'>Dashboard</a></li>
-                                    <li id='vie' onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><a href='/'>View Plans</a></li>
-                                    <li id='cre' onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><a href='/'>Create Plan</a></li>
+                                    <li className='dim' onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><span className='a'>Dashboard</span></li>
+                                    <li id='vie' onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><span className='a'>View Plans</span></li>
+                                    <li id='cre' onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><span className='a'>Create Plan</span></li>
                                 </div>
                             )
                         }
                         else if (page === "view-plan") {
                             return (
                                 <div>
-                                    <li onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><a href='/'>Dashboard</a></li>
-                                    <li className='dim' onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><a href='/'>View Plans</a></li>
-                                    <li id='cre' onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><a href='/'>Create Plan</a></li>
+                                    <li onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><span className='a'>Dashboard</span></li>
+                                    <li className='dim' onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><span className='a'>View Plans</span></li>
+                                    <li id='cre' onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><span className='a'>Create Plan</span></li>
                                 </div>
                             )
                         }
                         else if (page === "create-plan") {
                             return (
                                 <div>
-                                    <li onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><a href='/'>Dashboard</a></li>
-                                    <li onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><a href='/'>View Plans</a></li>
-                                    <li className='dim' onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><a href='/'>Create Plan</a></li>
+                                    <li onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><span className='a'>Dashboard</span></li>
+                                    <li onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><span className='a'>View Plans</span></li>
+                                    <li className='dim' onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><span className='a'>Create Plan</span></li>
                                 </div>
                             )
                         }
                         else{
                             return (
                                 <div>
-                                    <li onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><a href='/'>Dashboard</a></li>
-                                    <li onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><a href='/'>View Plans</a></li>
-                                    <li onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><a href='/'>Create Plan</a></li>
+                                    <li onClick={() => { navigate('/dashboard'); handlePageChange("dashboard") }}><span><MdDashboard className='icons' /></span><span className='a'>Dashboard</span></li>
+                                    <li onClick={() => { navigate('/view-plan'); handlePageChange("view-plan") }}><span><CiViewList className='icons' /></span><span className='a'>View Plans</span></li>
+                                    <li onClick={() => { navigate('/create-plan'); handlePageChange("create-plan") }}><span><IoIosCreate className='icons' /></span><span className='a'>Create Plan</span></li>
                                 </div>
                             )
                         }
 
                     })()}
 
-                    <li className='red' onClick={() => { Cookies.remove('jwtToken'); navigate('/login') }}><span><CiLogin className='icons' /></span><a href='/'>Logout</a></li>
+                    <li className='red' onClick={() => { Cookies.remove('jwtToken'); navigate('/login') }}><span><CiLogin className='icons' /></span><span className='a'>Logout</span></li>
                 </ul>
             </div>
         </div>
