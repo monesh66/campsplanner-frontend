@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 import login from '../img/login.png';
 import { RiKeyFill } from "react-icons/ri";
 import { FaUserLarge } from "react-icons/fa6";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { PiSpinnerBold } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
@@ -16,6 +16,8 @@ const Login = ({ url }) => {
     const [isAuth, setIsAuth] = useState(0);
     const [showMSG, setShowMSG] = useState(0);
     const [msg, setmsg] = useState("");
+    const usernameRef = useRef(0);
+    const passwordRef = useRef(0)
 
 
     const navigate = useNavigate();
@@ -90,18 +92,20 @@ const Login = ({ url }) => {
         }, 1000);
     }, [navigate, url])
 
-    useEffect(()=>{
-        if(showMSG === 1){
+    useEffect(() => {
+        if (showMSG === 1) {
             setTimeout(() => {
                 setShowMSG(0);
             }, 5500);
         }
-    },[showMSG])
+    }, [showMSG])
 
     //handle submit
     const handleSubmit = async (username, password) => {
         if (!username || !password) {
             console.log("Username and password is required!");
+            usernameRef.current.style.borderBottom = "solid 3px red";
+            passwordRef.current.style.borderBottom = "solid 3px red";
             setmsg("Username and password is required!");
             setShowMSG(1);
             return;
@@ -120,6 +124,8 @@ const Login = ({ url }) => {
                 navigate("/dashboard");
             } else {
                 console.log("Invalid username or password!");
+                usernameRef.current.style.borderBottom = "solid 3px red";
+                passwordRef.current.style.borderBottom = "solid 3px red";
                 setmsg("Invalid username or password!")
                 setShowMSG(1);
             }
@@ -170,9 +176,9 @@ const Login = ({ url }) => {
                                 </div>
                                 <div className="body">
                                     <div className="inputbox">
-                                        <input type="text" name='username' id='username' placeholder='Username' />
+                                        <input ref={usernameRef} type="text" name='username' id='username' placeholder='Username' />
                                         <div className="usericon"><FaUserLarge /></div>
-                                        <input type="text" name='password' id='password' placeholder='Password' />
+                                        <input ref={passwordRef} type="text" name='password' id='password' placeholder='Password' />
                                         <div className="passicon"><RiKeyFill /></div>
                                         <button onClick={() => {
                                             const username = document.getElementById('username').value;
