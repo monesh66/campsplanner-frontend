@@ -87,8 +87,8 @@ const Dashboard = ({ url }) => {
         className='skl3'
         baseColor="#d6d6d6a9"
         highlightColor="#f6f6f6"
-        width={380}
-        height={200} />;
+        width={300}
+        height={150} />;
 
     const sk4 = <Skeleton
         className='skl4'
@@ -198,7 +198,7 @@ const Dashboard = ({ url }) => {
                 ])
             }, 500);
         }
-    }, [compMount])
+    }, )
 
     // number animation
     useEffect(() => {

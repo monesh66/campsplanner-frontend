@@ -1,72 +1,86 @@
 body{
-    /* background-color: rgb(57, 189, 189); */
-    background-color: black;
+    background-color: rgb(45, 45, 45);
+    overflow: hidden;
 }
 .login{
-    width:1200px;
-    height: 700px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.203);
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    color: black;   
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
-.login > div{
-    width: 600px;
-    height: 700px;
+.login .loginbox{
+    color: white;
+    border: solid 2px white;
+    width: 500px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.068);
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.2);
 }
-.login .left{
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    /* background-color: rgb(0, 128, 255); */
-    background-color: rgb(41, 41, 41);
-}
-.login .right{
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: normal;
+.login .loginbox .title{
+    margin-top: 10px;
+    height: 100px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
-.login .right .box{
-    width: 550px;
-    height: 650px;
+.login .loginbox .title h1{
+    font-family: "Poppins", serif;
+}
+.login .loginbox .title p{
+    margin-top: 20px;
+    font-family: "Poppins", serif;
+}
+.login .loginbox .body{
+    width: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.login .right .box > p{
-    font-size: 25px;
-    font-weight: 500;
-    margin-top: 40px;
-}
-.login .inputBox{
-    width: 400px;
-    height: 300px;
-    border-radius: 20px;
-    border: solid 1px rgb(154, 204, 255);
-    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.203);
-    /* background: rgb(190, 222, 255); */
-    background-color: rgb(36, 36, 36);
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.login .inputBox input{
+.login .loginbox .body .inputbox{
     width: 80%;
-    height: 40px;
-    border-radius: 2px;
-    border-bottom: solid rgb(232, 232, 232) 3px;
+    height: 370px;
     margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.371);
+    position: relative;
+}
+.login .loginbox .body .inputbox .usericon{
+    position: absolute;
+    top: 40px;
+    left: 30px;
     font-size: 25px;
-    background-color: transparent;
     color: white;
+    text-shadow: 0 0 10px white
+}
+.login .loginbox .body .inputbox .passicon{
+    position: absolute;
+    top: 103px;
+    left: 30px;
+    font-size: 25px;
+    color: white;
+}
+.login .loginbox .body .inputbox input{
+    width: calc(90% - 50px);
+    padding-left: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-bottom: solid 3px white;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+.login .loginbox .body .inputbox input:hover{
+    border-bottom: solid 3px green;
 }
 input:focus {
     outline: none; 
@@ -75,91 +89,129 @@ input:focus {
 input::placeholder {
     color: rgb(199, 199, 199);
 }
-.login .inputBox input:hover{
-    border-bottom: 3px solid green;
+.login .loginbox .body .inputbox button{
+    width: 90%;
+    height: 40px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    font-size: 20px;
 }
-
-.login .inputBox button{
-    width: 200px;
-    height: 50px;
-    border-radius: 50px;
-    margin-top: 40px;
-    font-size: 27px;
-    background-color: rgb(255, 255, 255);
-}
-.login .inputBox button:hover{
-    width: 210px;
-    height: 55px;
-    background-color: rgb(5, 5, 5);
+.login .loginbox .body .inputbox button:hover{
+    background-color: black;
     color: white;
     transition: 200ms;
+    cursor: pointer;
 }
 .login .Gauth{
-    margin-top: 80px;
-}
-.login .left{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.login .left .loginimg{
-    height: 600px;
-}
-.login .google *{
-    background: rgb(40, 40, 40);
-    color: white;
-    border-radius: 100px;
-
-}
-.login .google{
-    width: 300px;
-    border-radius: 100px;
-}
-.login .google span{
-    font-size: 20px;
-}
-.login .google svg{
-    height: 25px;
+    margin-top: 50px;
 }
 .login .googletext{
-    color: black;
-    font-weight: 300;
-    margin-bottom: 20px;
-    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
 }
+.login .demo{
+    margin-top: 40px;
+}
+.login .here{
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login .bg1{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 100px;
+    left: 100px;
+    box-shadow: 0px 0px 1000px 100px rgba(255, 255, 255, 0.4);
+    z-index: -1;
+}
+.login .bg2{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 50%;
+    left: 100%;
+    box-shadow: 0px 0px 1000px 200px rgba(255, 255, 255, 0.4);
+    z-index: -1;
+}
+.login .bg3{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 100%;
+    left: 20%;
+    box-shadow: 0px 0px 1000px 200px rgba(255, 255, 255, 0.3);
+    z-index: -1;
+}
+.login .bg4{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 70%;
+    left: 60%;
+    box-shadow: 0px 0px 1000px 200px rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}
+
+
+
+
+
+
+
 .notification{
     position: absolute;
     top: 20px;
-    left: calc(50vw - 400px);
+    right: 0;
     width: 800px;
     height: 70px;
-    border-right: solid 5px rgb(255, 0, 0);
+    border-right: solid 5px rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: rgb(197, 87, 87);
+    background-color: rgb(0, 0, 0);
     animation: shake 0.5s ease-in-out;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.4);
+
+}
+@keyframes barload{
+    0%{width: 0px;}
+    100%{width: 100%;}
+}
+.notification::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0px;
+    height: 3px;
+    background-color: red;
+    z-index: -1;
+    animation: barload 5s ease-out 0.5s 1;
 }
 @keyframes shake{
-    0% {left: calc(50vw - 400px);}
-    10%, 30%, 50%, 70%, 90% { left: calc(50vw - 400px - 20px);}
-    20%, 40%, 60%, 80% { left: calc(50vw - 400px + 20px);}
-    100% {left: calc(50vw - 400px); }
+    0% {right: 0; opacity: 1;}
+    10%, 30%, 50%, 70%, 90% { right: -20px;}
+    20%, 40%, 60%, 80% { right: 20px;}
+    100% {right: 0; opacity: 1;}
 }
 .notification .msg{
     font-size: 25px;
-    color: rgb(15, 0, 0);
+    color: rgb(255, 255, 255);
     width: 730px;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 400;
 }
 .notification .close{
+    color: white;
     position: relative;
     right: 0;
     font-size: 30px;
 }
+
