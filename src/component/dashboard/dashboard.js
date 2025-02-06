@@ -10,6 +10,7 @@ import { BsPersonFillX } from "react-icons/bs";
 import { PiStudent } from "react-icons/pi";
 import { BsBuildingExclamation } from "react-icons/bs";
 import { BsBuildingCheck } from "react-icons/bs";
+import { MdCloudDone } from "react-icons/md";
 
 const Dashboard = ({ url }) => {
     const [isLoaded, setIsLoaded] = useState(0);
@@ -27,6 +28,7 @@ const Dashboard = ({ url }) => {
     const [activeStudents, setActiveStudents] = useState(0)
     const [inactiveStudents, setInactiveStudents] = useState(0)
     const [compMount, setcompMount] = useState(0)
+    const [sec3RowSKload, setSec3RowSKload] = useState(0)
 
 
     //check for comp loaded
@@ -114,6 +116,13 @@ const Dashboard = ({ url }) => {
         count={25}
         animation="wave" />;
 
+    const sk10 = <Skeleton
+        className='skl3'
+        baseColor="#d6d6d6a9"
+        highlightColor="#f6f6f6"
+        width={600}
+        height={350} />;
+
 
     //load sk
     useEffect(() => {
@@ -198,7 +207,7 @@ const Dashboard = ({ url }) => {
                 ])
             }, 500);
         }
-    }, )
+    },[tbDataLoad, compMount])
 
     // number animation
     useEffect(() => {
@@ -289,10 +298,26 @@ const Dashboard = ({ url }) => {
             setIsLoaded(1);
             apicall();
         }
-
     }, [compMount])
 
 
+    //sec3 sk load 
+    const skrow = <Skeleton
+        className='skl5'
+        baseColor="#d6d6d6a9"
+        highlightColor="#f6f6f6"
+        width={"100%"}
+        height={30}
+        count={15}
+        animation="wave" />;
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (sec3RowSKload === 0) {
+                setSec3RowSKload(1);
+            }
+        }, 3200);
+    }, [sec3RowSKload])
 
     return (
         <div className="dashboard">
@@ -385,6 +410,53 @@ const Dashboard = ({ url }) => {
                                 </div>
                             </div>) : (<div className="sk">{sk3}{sk3}{sk3}{sk3}</div>)}
                     </div>
+                </div>
+                <div className="sec3">
+                    {skLoad ? (
+                        <>
+                            <div className="left">
+                                <div className="title">
+                                    <p>Pending Mail Queue</p>
+                                </div>
+                                <div className="body">
+                                    {sec3RowSKload ? (
+                                        <div className="table">
+                                            <div className="processDone">
+                                                <MdCloudDone className='icon'/>
+                                                <p>Nothing In Queue</p>
+                                                <p>All Mail Has Been Sent.</p>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="sktable">
+                                            {skrow}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="right">
+                                <div className="title">
+                                    <p>Last Sent Mail</p>
+                                </div>
+                                <div className="body">
+                                    {sec3RowSKload ? (
+                                        <div className="table">
+
+                                        </div>
+                                    ) : (
+                                        <div className="sktable">
+                                            {skrow}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            {sk10}
+                            {sk10}
+                        </>
+                    )}
                 </div>
                 <div className="sec2">
                     {tbLoad ? (

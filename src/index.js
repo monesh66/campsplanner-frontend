@@ -6,7 +6,9 @@ import { MdOutlineErrorOutline } from "react-icons/md";
 import Login from './component/login/login';
 import Main from './component/main/main';
 
-const url = "http://localhost:8090";
+
+// const url = "http://localhost:8090";
+const url = process.env.REACT_APP_BACKEND_API;
 
 const App = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -26,7 +28,7 @@ const App = () => {
         return (
             <div className="phone">
                 <div className="bc1"></div>
-                <div className="bc2"></div>
+                <div className="bc2"></div> 
 
                 <div className="displayMsg">
                     <div className="icon">

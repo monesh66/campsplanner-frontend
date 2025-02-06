@@ -1,7 +1,6 @@
 import './login.css';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google'
 import { jwtDecode } from 'jwt-decode';
-import login from '../img/login.png';
 import { RiKeyFill } from "react-icons/ri";
 import { FaUserLarge } from "react-icons/fa6";
 import { useEffect, useState, useRef } from 'react';
@@ -136,6 +135,11 @@ const Login = ({ url }) => {
         }
     };
 
+    //demo session
+    const handleDemoSession = ()=>{
+        handleSubmit("demo","123123123,Cam.");
+    }
+
 
     return (
         <div>
@@ -174,7 +178,7 @@ const Login = ({ url }) => {
                                     <h1>Campus Schedule Planner</h1>
                                     <p>Login To Access</p>
                                 </div>
-                                <div className="body">
+                                <div className="body"> 
                                     <div className="inputbox">
                                         <input ref={usernameRef} type="text" name='username' id='username' placeholder='Username' />
                                         <div className="usericon"><FaUserLarge /></div>
@@ -199,7 +203,7 @@ const Login = ({ url }) => {
                                     </div>
 
                                     <div className="demo">
-                                        <p>Guest User? Demo Version Available <span className='here'>Here</span></p>
+                                        <p>This Project Demo Version Available <span onClick={handleDemoSession} className='here'>Here</span></p>
                                     </div>
                                 </div>
                             </div>

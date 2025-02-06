@@ -93,6 +93,19 @@ const Main = ({ url }) => {
                             </div>
                         )
                     }
+                    else if (userType === "demo") {
+                        return (
+                            <div>
+                                <NavBar handlePageChange={handlePageChange}
+                                    page={page} />
+                                <Routes>
+                                    <Route path='/dashboard' element={<Dashboard />} />
+                                    {/* <Route path='/view-plan' element={<ViewPlanMain />} /> */}
+                                    <Route path='*' element={<h1>Demo Users Not Allowed To View This Page</h1>} />
+                                </Routes>
+                            </div>
+                        )
+                    }
                     else {
                         return (
 
