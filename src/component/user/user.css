@@ -1,0 +1,460 @@
+.user{
+    width: 95vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgb(241, 241, 241);
+    margin-left: 5vw;
+    color: black;
+}
+.user>.title{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: calc(95vw - 50px);
+    height: 50px;
+    /* background-color: rgb(228, 228, 228);
+    border: solid 1px black; */
+    /* border-radius: 10px; */
+    /* display: flex;
+    align-items: center; */
+    margin-bottom: 20px;
+    border-bottom: solid 2px black;
+}
+.user .title h1{
+    margin-left: 20px;
+    font-size: 25px;
+}
+.user>.body{
+    margin-left: 10px;
+    margin-right: 10px;
+    /* border: solid 1px black; */
+}
+.user .sec1{
+    height: calc(100vh - 100px);
+    width: 100%;
+}
+.user .sec1 .searchsec{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 600px;
+
+}
+.user .sec1 .searchsec .searchbox{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.user .sec1 .searchsec .searchbox .icon{
+    font-size: 20px;
+    width: 40px;
+    padding: 10px 10px;
+    height: 40px;
+}
+.user .sec1 .searchsec .searchbox input{
+    width: calc(100% - 40px);
+    height: 100%;
+    font-size: 20px;
+}
+.user .sec1 .searchsec .addvenue{
+    width: 230px;
+    height: 50px;
+    background-color: rgb(52, 225, 52);
+    border: dashed 3px green;
+    border-radius: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 100ms;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+
+}
+.user .sec1 .searchsec .addvenue:hover{
+    scale: 1.05;
+    transition: 200ms;
+}
+.user .sec1 .searchsec .addvenue:active{
+    transition: 50ms;
+    scale: 1;
+}
+.user .sec1 .searchsec .addvenue .icon{
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+   font-weight: 600;
+}
+.user .sec1 .searchsec .addvenue p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.user .sec1 .userbox{
+    width: 100%;
+    height: calc(100% - 100px);
+    border: solid 2px black;
+}
+.user .sec1 .userbox .head{
+    height: 50px;
+    width: calc(100% - 10px);
+    padding-right: 10px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: solid 2px black;
+}
+.user .sec1 .userbox .row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row:nth-child(2n){
+    background-color: rgb(221, 221, 221);
+}
+.user .sec1 .userbox .row:nth-child(2n+1){
+    background-color: rgb(240, 240, 240);
+}
+.user .sec1 .userbox .head .row{
+    background-color: white;
+}
+.user .sec1 .userbox .row .id{
+    height: 100%;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row .profile{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row .name{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row .rollNo{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row .email{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row .usertype{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .row .view{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .sec1 .userbox .body{
+    background-color: white;
+    width: 100%;
+    height: calc(100% - 52px);
+}
+.user .sec1 .userbox .body .row{
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+.user .sec1 .userbox .body .box{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.user .sec1 .userbox .body .row .profile .circle{
+    width: 30px;
+    height: 30px;
+    border: solid 2px black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+.user .sec1 .userbox .body .row .usertype .ggreen p{
+    padding: 1px 5px;
+    border-radius: 5px;
+    border: solid 2px green;
+    color: black;
+    background-color: rgba(0, 255, 0, 0.495);
+}
+.user .sec1 .userbox .body .row .usertype .blue p{
+    padding: 1px 5px;
+    border-radius: 5px;
+    border: solid 2px blue;
+    color: black;
+    background-color: rgba(0, 0, 255, 0.474);
+}
+
+
+.user .blur{
+    filter: blur(5px);
+}
+@keyframes popupe{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.user .editbox{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    z-index: 10;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: popupe 0.5s ease-out 1;
+}
+.user .editbox .title{
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 2px black;
+    display: flex;
+    align-items: center;
+}
+.user .editbox .close{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 30px;
+    background-color: red;
+    border-radius: 5px;
+}
+.user .editbox .close:hover{
+    cursor: pointer;
+    transition: 200ms;
+    scale: 1.1;
+}
+.user .editbox .body{
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user .editbox .body .row{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.user .editbox .body .row .idid{
+    width: 190px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.user .editbox .body .row p{
+    font-size: 20px;
+    font-weight: 700;
+    width: 120px;
+}
+.user .editbox .body .row input{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px 5px;
+    background-color: rgb(238, 238, 238);
+}
+.user .editbox .body .row select{
+    width: 210px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px 5px;
+    background-color: rgb(238, 238, 238);
+}
+.user .editbox .save-btn{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .editbox .save-btn button{
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(2, 209, 2);
+    border-radius: 10px;
+    transition: 100ms;
+}
+.user .editbox .save-btn button:hover{
+    transition: 200ms;
+    scale: 1.1;
+}
+@keyframes rotate{
+    0%{rotate: 0deg;}
+    100%{rotate: 360deg;}
+}
+.user .editbox .rotate{
+    font-size: 30px;
+    font-weight: 800;
+    animation: rotate 1s infinite ease-in-out;
+}
+
+
+.user .deletebox{
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    z-index: 10;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: popupe 0.5s ease-out 1;
+}
+.user .deletebox .title{
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 2px black;
+    display: flex;
+    align-items: center;
+}
+.user .deletebox .close{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 30px;
+    background-color: red;
+    border-radius: 5px;
+}
+.user .deletebox .close:hover{
+    cursor: pointer;
+    transition: 200ms;
+    scale: 1.1;
+}
+.user .deletebox .body{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.user .deletebox .body span{
+    font-weight: 800;
+    font-family: "Poppins", serif;
+}
+.user .deletebox .save-btn{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user .deletebox .save-btn button{
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(209, 2, 2);
+    border-radius: 10px;
+    transition: 100ms;
+}
+.user .deletebox .save-btn button:hover{
+    transition: 200ms;
+    scale: 1.1;
+}
+.user .deletebox .rotate{
+    font-size: 30px;
+    font-weight: 800;
+    animation: rotate 1s infinite ease-in-out;
+}
+
+
+.user .vpopup{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 800px;
+    height: 70px;
+    border-right: solid 5px green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(0, 200, 0);
+    animation: pop-in-out 5s ease-in-out;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+
+}
+@keyframes barload{
+    0%{width: 0px;}
+    100%{width: 100%;}
+}
+.user .vpopup::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    animation: barload 5s ease-out 0.5s 1;
+}
+@keyframes pop-in-out{
+    0% {right: -50%; opacity: 0;}
+    10%{ right: 0;opacity: 1;}
+    90%{ right: 0;opacity: 1;}
+    100% {right: -50%; opacity: 0;}
+}
+.user .vpopup .msg{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    width: 730px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+.user .vpopup .close{
+    color: white;
+    position: relative;
+    right: 0;
+    font-size: 30px;
+}

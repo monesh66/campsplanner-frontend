@@ -32,7 +32,24 @@
 .viewPlan .body .sec1{
     height: 100%;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+
+}
+.planBlock {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.planBlock h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.planBlock p {
+    margin: 4px 0;
+    font-size: 15px;
 }

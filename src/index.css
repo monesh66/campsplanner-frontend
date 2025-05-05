@@ -44,6 +44,27 @@ body{
   font-weight: 700;
   font-size: 25px;
 }
+.popup{
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100vw;
+  height: 20px;
+}
+.popup .serverstatus{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.popup .serverstatus .status span{
+  color: rgb(0, 0, 0);
+  border: solid 1px red;
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 3px 5px;
+  border-radius: 10px;
+}
 
 .phone {
   height: 100vh;

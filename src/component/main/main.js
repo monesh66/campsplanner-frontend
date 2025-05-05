@@ -2,13 +2,17 @@ import './main.css';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import NavBar from '../navbar/navbar';
+import AddVenue from '../addVenue/addVenue'
 import Dashboard from '../dashboard/dashboard';
 import ViewPlanMain from '../viewPlan/viewPlanMain'
+import User from '../user/user'
+import RollDice from '../dice/rollDice'  //wddewfefewfkendvkirdn v
+import CreatePlan from '../createPlan/createPlan'
 // import { jwtDecode } from 'jwt-decode';
 import { useEffect, useState } from 'react';
 import { PiSpinnerBold} from "react-icons/pi";
 import { useNavigate, useLocation, Route, Routes } from "react-router-dom";
-
+ 
 const Main = ({ url }) => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -18,21 +22,22 @@ const Main = ({ url }) => {
     const [page, setPage] = useState(0);
 
     function handlePageChange(page) {
-        console.log(page)
         setPage(page);
     }
 
     //check for auth
     useEffect(() => {
         const checkAuth = async () => {
+            // setIsAuth(1)
+            // setUserType("staff")
             try {
                 const jwtToken = Cookies.get("jwtToken");
                 console.log(`jwtToken: ${jwtToken}`);
                 if (jwtToken) {
                     const response = await axios.post(
-                        url + "/api/v1/auth/verify",
+                        url + "/api/v1/verify",
                         {
-                            JWT: jwtToken
+                            jwt: jwtToken
                         }
                     )
                     if (response.data.auth === true) {
@@ -48,6 +53,7 @@ const Main = ({ url }) => {
                 }
             } catch (error) {
                 console.log(`Something went wrong in auth check: ${error}`);
+                navigate("/login");
             }
         }
         setTimeout(() => {
@@ -88,8 +94,12 @@ const Main = ({ url }) => {
                                 <Routes>
                                     <Route path='/dashboard' element={<Dashboard />} />
                                     <Route path='/view-plan' element={<ViewPlanMain />} />
+                                    <Route path='/venue' element={<AddVenue url = {url} />} />
+                                    <Route path='/users' element={<User />} />
+                                    <Route path='/dice' element={<RollDice />} />
+                                    <Route path='/create-plan' element={<CreatePlan />} />
                                     <Route path='*' element={<h1>404 Page Not Found</h1>} />
-                                </Routes>
+                                </Routes>   
                             </div>
                         )
                     }

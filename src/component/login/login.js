@@ -17,6 +17,7 @@ const Login = ({ url }) => {
     const [msg, setmsg] = useState("");
     const usernameRef = useRef(0);
     const passwordRef = useRef(0)
+    const [serverMsg, setServerMsg] = useState(0)
 
 
     const navigate = useNavigate();
@@ -27,9 +28,9 @@ const Login = ({ url }) => {
         console.log('User Info:', user);
 
         try {
-            const response = await axios.post(url + '/api/v1/auth/login', {
+            const response = await axios.post(url + '/api/v1/login', {
                 email: user.email,
-                loginType: "oAuth"
+                loginType: "OAuth"
             });
             console.log(response)
             if (response.data.code === 1) {
@@ -42,7 +43,7 @@ const Login = ({ url }) => {
                 setShowMSG(1);
             }
         } catch (error) {
-
+            console.log(error)
         }
     };
 
@@ -56,17 +57,33 @@ const Login = ({ url }) => {
             setIsLoading(0)
         }, 1800)
     }, [])
+    
 
     //check auth
     useEffect(() => {
+        const checkServer = async () => {
+            try {
+                const response = await axios.post(url + '/api/server', {
+                    code: 1
+                })
+                if (response.data.code == 1) {
+                    setTimeout(() => {
+                        checkAuth();
+                    }, 1000);
+                }
+            }
+            catch (err) {
+                console.log('err')
+            }
+        }
         const checkAuth = async () => {
             const cookie = Cookies.get('jwtToken');
             if (cookie) {
                 try {
-                    const response = await axios.post(url + '/api/v1/auth/verify', {
+                    const response = await axios.post(url + '/api/v1/verify', {
                         JWT: cookie,
                         loginType: "username"
-                    });
+                    },{'Content-Type': 'application/json'});
                     if (response.data.auth === true) {
                         console.log(response.data)
                         navigate("/dashboard");
@@ -87,6 +104,10 @@ const Login = ({ url }) => {
             }
         }
         setTimeout(() => {
+            // checkServer()
+            // setTimeout(() => {
+            //     setServerMsg(1);
+            // }, 2000);
             checkAuth();
         }, 1000);
     }, [navigate, url])
@@ -111,8 +132,8 @@ const Login = ({ url }) => {
         }
 
         try {
-            const response = await axios.post(url + '/api/v1/auth/login', {
-                username: username,
+            const response = await axios.post(url + '/api/v1/login', {
+                userName: username,
                 password: password,
                 loginType: "username"
             });
@@ -136,8 +157,8 @@ const Login = ({ url }) => {
     };
 
     //demo session
-    const handleDemoSession = ()=>{
-        handleSubmit("demo","123123123,Cam.");
+    const handleDemoSession = () => {
+        handleSubmit("demo", "demo");
     }
 
 
@@ -146,10 +167,29 @@ const Login = ({ url }) => {
             {(() => {
                 if (isAuth === 0) {
                     return (
-                        <div className="loading">
-                            <PiSpinnerBold className='pi' />
-                            <p>Authenticating...</p>
-                        </div>)
+                        <>
+                            <div className="loading">
+                                <PiSpinnerBold className='pi' />
+                                <p>Authenticating...</p>
+
+                            </div>
+                            <div className="popup">
+                                {serverMsg ? (
+                                    <div className="serverstatus">
+                                        <div className="status">
+                                            <p>Server: <span>Sleeping</span></p>
+                                        </div>
+                                        <p>{'>'} Warming Up The Server...</p>
+                                    </div>
+                                ) : (
+                                    <div className="serverstatus">
+                                        <p>{'>'} Checking Backend Server Status...</p>
+                                    </div>
+                                )}
+
+                            </div>
+                        </>
+                    )
                 }
                 else if (isLoading === 1 & isAuth !== 0) {
                     return (
@@ -178,7 +218,7 @@ const Login = ({ url }) => {
                                     <h1>Campus Schedule Planner</h1>
                                     <p>Login To Access</p>
                                 </div>
-                                <div className="body"> 
+                                <div className="body">
                                     <div className="inputbox">
                                         <input ref={usernameRef} type="text" name='username' id='username' placeholder='Username' />
                                         <div className="usericon"><FaUserLarge /></div>

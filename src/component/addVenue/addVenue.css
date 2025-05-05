@@ -1,0 +1,443 @@
+.venue{
+    width: 95vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgb(241, 241, 241);
+    margin-left: 5vw;
+    color: black;
+}
+.venue>.title{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: calc(95vw - 50px);
+    height: 50px;
+    /* background-color: rgb(228, 228, 228);
+    border: solid 1px black; */
+    /* border-radius: 10px; */
+    /* display: flex;
+    align-items: center; */
+    margin-bottom: 20px;
+    border-bottom: solid 2px black;
+}
+.venue .title h1{
+    margin-left: 20px;
+    font-size: 25px;
+}
+.venue>.body{
+    margin-left: 10px;
+    margin-right: 10px;
+    /* border: solid 1px black; */
+}
+.venue .sec1{
+    height: calc(100vh - 100px);
+    width: 100%;
+}
+.venue .sec1 .searchsec{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 600px;
+
+}
+.venue .sec1 .searchsec .searchbox{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.venue .sec1 .searchsec .searchbox .icon{
+    font-size: 20px;
+    width: 40px;
+    padding: 10px 10px;
+    height: 40px;
+}
+.venue .sec1 .searchsec .searchbox input{
+    width: calc(100% - 40px);
+    height: 100%;
+    font-size: 20px;
+}
+.venue .sec1 .searchsec .addvenue{
+    width: 230px;
+    height: 50px;
+    background-color: rgb(52, 225, 52);
+    border: dashed 3px green;
+    border-radius: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 100ms;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+
+}
+.venue .sec1 .searchsec .addvenue:hover{
+    scale: 1.05;
+    transition: 200ms;
+}
+.venue .sec1 .searchsec .addvenue:active{
+    transition: 50ms;
+    scale: 1;
+}
+.venue .sec1 .searchsec .addvenue .icon{
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+   font-weight: 600;
+}
+.venue .sec1 .searchsec .addvenue p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.venue .sec1 .venuebox{
+    width: 100%;
+    height: calc(100% - 100px);
+}
+.venue .sec1 .venuebox>span br{
+    display: none;
+}
+.venue .sec1 .venuebox .box {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    overflow-y: scroll;
+}
+.venue .sec1 .venuebox .box .box-item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+}
+.venue .sec1 .venuebox .box .box-item .venuebox p{
+    margin-left: 10px;
+    margin-top: 8px;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox p span{
+    margin-left: 5px;
+    font-weight: 500;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox p .green{
+    padding: 2px 5px;
+    background-color: rgb(128, 242, 128);
+    border: solid 2px green;
+    border-radius: 10px;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox p .red{
+    padding: 2px 5px;
+    background-color: rgb(211, 97, 97);
+    border-radius: 10px;
+    border: solid 2px red;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox .edit{
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    /* background-color: rgb(135, 135, 255); */
+    border-radius: 5px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: solid 1px blue; */
+}
+.venue .sec1 .venuebox .box .box-item .venuebox .edit:hover{
+    transition: 100ms;
+    scale: 1.09;
+    cursor: pointer;
+    color: blue;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox .edit:active{
+    transition: 100ms;
+    scale: 1.0;
+}
+.venue .sec1 .venuebox .box .box-item .venuebox .delete{
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    /* background-color: rgb(135, 135, 255); */
+    border-radius: 5px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: solid 1px blue; */
+}
+.venue .sec1 .venuebox .box .box-item .venuebox .delete:hover{
+    transition: 100ms;
+    scale: 1.09;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+}
+.venue .sec1 .venuebox .box .box-item .venuebox .delete:active{
+    transition: 100ms;
+    scale: 1.0;
+}
+
+
+.venue .blur{
+    filter: blur(5px);
+}
+@keyframes popupe{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.venue .editbox{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    z-index: 10;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: popupe 0.5s ease-out 1;
+}
+.venue .editbox .title{
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 2px black;
+    display: flex;
+    align-items: center;
+}
+.venue .editbox .close{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 30px;
+    background-color: red;
+    border-radius: 5px;
+}
+.venue .editbox .close:hover{
+    cursor: pointer;
+    transition: 200ms;
+    scale: 1.1;
+}
+.venue .editbox .body{
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.venue .editbox .body .row{
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.venue .editbox .body .row .idid{
+    width: 190px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.venue .editbox .body .row p{
+    font-size: 20px;
+    font-weight: 700;
+    width: 120px;
+}
+.venue .editbox .body .row input{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px 5px;
+    background-color: rgb(238, 238, 238);
+}
+.venue .editbox .body .row select{
+    width: 210px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px 5px;
+    background-color: rgb(238, 238, 238);
+}
+.venue .editbox .save-btn{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.venue .editbox .save-btn button{
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(2, 209, 2);
+    border-radius: 10px;
+    transition: 100ms;
+}
+.venue .editbox .save-btn button:hover{
+    transition: 200ms;
+    scale: 1.1;
+}
+@keyframes rotate{
+    0%{rotate: 0deg;}
+    100%{rotate: 360deg;}
+}
+.venue .editbox .rotate{
+    font-size: 30px;
+    font-weight: 800;
+    animation: rotate 1s infinite ease-in-out;
+}
+
+
+.venue .deletebox{
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    z-index: 10;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: popupe 0.5s ease-out 1;
+}
+.venue .deletebox .title{
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 2px black;
+    display: flex;
+    align-items: center;
+}
+.venue .deletebox .close{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 30px;
+    background-color: red;
+    border-radius: 5px;
+}
+.venue .deletebox .close:hover{
+    cursor: pointer;
+    transition: 200ms;
+    scale: 1.1;
+}
+.venue .deletebox .body{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.venue .deletebox .body span{
+    font-weight: 800;
+    font-family: "Poppins", serif;
+}
+.venue .deletebox .save-btn{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.venue .deletebox .save-btn button{
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(209, 2, 2);
+    border-radius: 10px;
+    transition: 100ms;
+}
+.venue .deletebox .save-btn button:hover{
+    transition: 200ms;
+    scale: 1.1;
+}
+.venue .deletebox .rotate{
+    font-size: 30px;
+    font-weight: 800;
+    animation: rotate 1s infinite ease-in-out;
+}
+
+
+.venue .vpopup{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 800px;
+    height: 70px;
+    border-right: solid 5px green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(0, 200, 0);
+    animation: pop-in-out 5s ease-in-out;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+
+}
+@keyframes barload{
+    0%{width: 0px;}
+    100%{width: 100%;}
+}
+.venue .vpopup::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    animation: barload 5s ease-out 0.5s 1;
+}
+@keyframes pop-in-out{
+    0% {right: -50%; opacity: 0;}
+    10%{ right: 0;opacity: 1;}
+    90%{ right: 0;opacity: 1;}
+    100% {right: -50%; opacity: 0;}
+}
+.venue .vpopup .msg{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    width: 730px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+.venue .vpopup .close{
+    color: white;
+    position: relative;
+    right: 0;
+    font-size: 30px;
+}

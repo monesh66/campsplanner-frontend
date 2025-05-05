@@ -207,7 +207,7 @@ const Dashboard = ({ url }) => {
                 ])
             }, 500);
         }
-    },[tbDataLoad, compMount])
+    }, [tbDataLoad, compMount])
 
     // number animation
     useEffect(() => {
@@ -416,15 +416,22 @@ const Dashboard = ({ url }) => {
                         <>
                             <div className="left">
                                 <div className="title">
-                                    <p>Pending Mail Queue</p>
+                                    <div className="left">
+                                        <p>Mail delivery Queue</p>
+                                    </div>
+                                    <div className="right">
+                                        <span className="button">
+                                            <p>Stop</p>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div className="body">
                                     {sec3RowSKload ? (
                                         <div className="table">
                                             <div className="processDone">
-                                                <MdCloudDone className='icon'/>
+                                                <MdCloudDone className='icon' />
                                                 <p>Nothing In Queue</p>
-                                                <p>All Mail Has Been Sent.</p>
+                                                <p>All Mail Has delivered.</p>
                                             </div>
                                         </div>
                                     ) : (
@@ -436,7 +443,14 @@ const Dashboard = ({ url }) => {
                             </div>
                             <div className="right">
                                 <div className="title">
-                                    <p>Last Sent Mail</p>
+                                    <div className="left">
+                                        <p>Last Sent Mail</p>
+                                    </div>
+                                    <div className="right">
+                                        <div className="button green">
+                                            <p>View</p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="body">
                                     {sec3RowSKload ? (
